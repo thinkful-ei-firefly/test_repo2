@@ -76,3 +76,38 @@ try{
 catch (e){
     console.log(e.message);
 }
+
+function rockPaperScissors(player){
+    if (player !== 1 && player !== 2 && player !==3)
+        throw new Error("Please enter 1, 2 or 3");
+    const enemy = Math.floor(Math.random() * 3) + 1;
+    if (player === enemy)
+        return "Its a tie";
+    // 1 = Rock         2 > 1 > 3
+    // 2 = Paper        3 > 2 > 1
+    // 3 = Scissors     1 > 2 > 3
+    else if (enemy == 1){
+        if (player == 2)
+            return "You won";
+        else
+            return "You lost";
+    }
+    else if (enemy == 2){
+        if (player == 3)
+            return "You won";
+        else 
+            return "You lost";
+    }
+    else if (enemy == 3){
+        if (player == 1)
+            return "You won";
+        else 
+            return "You lost";
+    }
+}
+try{
+    console.log(rockPaperScissors(2));
+}
+catch (e){
+    console.log(e.message);
+}
