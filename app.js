@@ -7,7 +7,11 @@ function getYearOfBirth(age) {
 }
 
 function createGreeting(name, age) {
-    return `Hi, my name is ${name} and I'm ${age} years old. I was born in ${getYearOfBirth(age)}.`;
+    if (name === undefined || age === undefined ) {
+        throw new Error('Arguments not valid.');
+    }  else {
+        return `Hi, my name is ${name} and I'm ${age} years old. I was born in ${getYearOfBirth(age)}.`;
+}
 }
 // console.log(createGreeting());
 
